@@ -21,7 +21,7 @@ private:
 				"port=5432 "
 				"dbname=dataclients "
 				"user=postgres "
-				"password=Rus463812"
+				"password=*******"
 			);
 
 			
@@ -242,10 +242,12 @@ int main()
 	catch (pqxx::sql_error& e)
 	{
 		std::cout << e.what() << std::endl;
+		return EXIT_FAILURE;
 	}
 	catch (const std::exception& e)
 	{
 		std::cerr << "Error: " << e.what() << '\n';
+		return EXIT_FAILURE;
 	}
 	return EXIT_SUCCESS;
 }
